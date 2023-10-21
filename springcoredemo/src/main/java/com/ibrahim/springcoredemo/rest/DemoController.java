@@ -12,14 +12,14 @@ public class DemoController {
 
     @Autowired
     public DemoController(
-            @Qualifier("cricketCoach") Coach theCoach) {
+            @Qualifier("customname") Coach theCoach) {
         System.out.println("theCoach = " + theCoach.getClass().getSimpleName());
         myCoach = theCoach;
 
     }
 
 
-    @GetMapping("/dailyworkout")
+    @GetMapping("/workout")
     public String getDailyWorkout() {
 
         return myCoach.getDailyWorkout();
