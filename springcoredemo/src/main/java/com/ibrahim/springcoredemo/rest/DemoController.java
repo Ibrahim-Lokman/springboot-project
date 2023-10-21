@@ -16,6 +16,8 @@ public class DemoController {
 //    }
     @Autowired
     public DemoController(Coach theCoach) {
+        System.out.println("I HAVE BEEN CALLED DemoController(Coach theCoach) ");
+        System.out.println(theCoach.getClass().getSimpleName());
         myCoach = theCoach;
     }
 
