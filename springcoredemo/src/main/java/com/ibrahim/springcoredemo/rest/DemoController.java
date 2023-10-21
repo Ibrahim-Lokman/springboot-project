@@ -13,6 +13,10 @@ public class DemoController {
 //    public DemoController(Coach theCoach) {
 //        myCoach = theCoach;
 //    }
+
+    //    @Autowired
+//    private  Coach myCoachFieldInjection;
+    
     @Autowired
     public void justTest(Coach lala) {
         System.out.println("I HAVE BEEN CALLED justTest ");
