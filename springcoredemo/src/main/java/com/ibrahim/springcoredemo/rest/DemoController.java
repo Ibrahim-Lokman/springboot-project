@@ -14,8 +14,12 @@ public class DemoController {
 
     @Autowired
     public DemoController(
-            @Qualifier("cricketCoach") Coach theCoach) {
+            @Qualifier("cricketCoach") Coach theCoach,
+            @Qualifier("cricketCoach") Coach theAnotherCoach) {
+        System.out.println("theCoach = " + theCoach.getClass().getSimpleName());
+        System.out.println("theAnotherCoach = " + theAnotherCoach.getClass().getSimpleName());
         myCoach = theCoach;
+        anotherCoach = theAnotherCoach;
     }
 
 
@@ -24,4 +28,11 @@ public class DemoController {
 
         return myCoach.getDailyWorkout();
     }
+
+    @GetMapping("/check")
+    public String check() {
+
+        return "Comparing beans: " + (myCoach == anotherCoach);
+    }
+
 }
