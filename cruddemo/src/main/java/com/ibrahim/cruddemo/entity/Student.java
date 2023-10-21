@@ -10,7 +10,7 @@ public class Student {
     @Column(name = "id")
     private int id;
     @Column(name = "first_name")
-    private String first_name;
+    private String firstName;
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "email")
@@ -20,8 +20,8 @@ public class Student {
 
     }
 
-    public Student(String first_name, String lastName, String email) {
-        this.first_name = first_name;
+    public Student(String firstName, String lastName, String email) {
+        this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
@@ -34,12 +34,12 @@ public class Student {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -63,7 +63,7 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", first_name='" + first_name + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 '}';
