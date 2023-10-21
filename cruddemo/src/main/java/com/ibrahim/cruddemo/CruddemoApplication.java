@@ -24,18 +24,26 @@ public class CruddemoApplication {
         System.out.println("commandLineRunner start.");
         return runner -> {
             System.out.println("runner start.");
-            createStudent(studentDAO);
+//            createStudent(studentDAO);
+            readStudent(studentDAO);
             System.out.println("runner end.");
         };
 
     }
 
-    private void createStudent(StudentDAO studentDAO) {
-        System.out.println("CruddemoApplication createStudent start.");
-        Student tempStudent = new Student("Sajeet", "Ibrahim", "sajeet@ibrahim.com");
-        System.out.println("CruddemoApplication createStudent mid.");
+    private void readStudent(StudentDAO studentDAO) {
+        Student tempStudent = new Student("Sajeet read", "Ibrahim read", "sajeetread@ibrahim.com");
         studentDAO.save(tempStudent);
-        System.out.println("CruddemoApplication createStudent end.");
+        Student myStudent = studentDAO.findById(tempStudent.getId());
+        System.out.println("Found student = " + myStudent);
+    }
+
+    private void createStudent(StudentDAO studentDAO) {
+
+        Student tempStudent = new Student("Sajeet 2", "Ibrahim 2", "sajeet2@ibrahim2.com");
+
+        studentDAO.save(tempStudent);
+
     }
 
 }
