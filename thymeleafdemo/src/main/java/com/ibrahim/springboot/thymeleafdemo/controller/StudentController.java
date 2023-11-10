@@ -16,11 +16,16 @@ public class StudentController {
 
     @Value("${countries}")
     private List<String> countries;
+
+    @Value("${programmingLanguage}")
+    private List<String> programmingLanguage;
+
     @GetMapping("/showStudentForm")
     public String showForm(Model theModel) {
         Student theStudent = new Student();
         theModel.addAttribute("student", theStudent);
         theModel.addAttribute("countries", countries);
+        theModel.addAttribute("programmingLanguage", programmingLanguage);
         return  "student-form";
     }
     @PostMapping("/processStudentForm")
