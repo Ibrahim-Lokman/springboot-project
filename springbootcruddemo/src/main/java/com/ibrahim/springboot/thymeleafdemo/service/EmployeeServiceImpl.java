@@ -1,12 +1,11 @@
-package com.ibrahim.springboot.springbootcruddemo.service;
+package com.ibrahim.springboot.thymeleafdemo.service;
 
 //import com.ibrahim.springboot.springbootcruddemo.dao.EmployeeDAO;
 
-import com.ibrahim.springboot.springbootcruddemo.entity.Employee;
-import com.ibrahim.springboot.springbootcruddemo.repository.EmployeeRepository;
+import com.ibrahim.springboot.thymeleafdemo.entity.Employee;
+import com.ibrahim.springboot.thymeleafdemo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;

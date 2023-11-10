@@ -1,7 +1,7 @@
-package com.ibrahim.springboot.springbootcruddemo.controller;
+package com.ibrahim.springboot.thymeleafdemo.controller;
 
-import com.ibrahim.springboot.springbootcruddemo.entity.Employee;
-import com.ibrahim.springboot.springbootcruddemo.service.EmployeeService;
+import com.ibrahim.springboot.thymeleafdemo.entity.Employee;
+import com.ibrahim.springboot.thymeleafdemo.service.EmployeeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

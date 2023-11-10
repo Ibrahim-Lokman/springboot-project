@@ -1,6 +1,6 @@
-package com.ibrahim.springboot.springbootcruddemo.repository;
+package com.ibrahim.springboot.thymeleafdemo.repository;
 
-import com.ibrahim.springboot.springbootcruddemo.entity.Employee;
+import com.ibrahim.springboot.thymeleafdemo.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
