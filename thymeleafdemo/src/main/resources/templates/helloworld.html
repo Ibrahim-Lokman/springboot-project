@@ -12,10 +12,13 @@
 
 <p th:text="'Time on the server is, ' + ${theDate}"  class="funny"/>
 
+<p th:text=" ${message}"  class="funny"/>
 
-<p th:text="'The student name is , ' + ${message}"  class="funny"/>
+<form th:action="@{/processFormVersionFour}" method="POST">
 
-
+    <input type="text" name="studentID" placeholder="What's your Student ID?"/>
+    <input type="submit">
+</form>
 
 </body>
 
