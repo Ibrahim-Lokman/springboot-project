@@ -13,7 +13,7 @@ public class Customer {
     @NotNull(message = "is required")
     @Min(value =  18, message =  "must be >= 18")
     @Max(value =  40, message =  "must be <= 35")
-    private int ageLimit;
+    private Integer ageLimit;
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "Enter 5 chars/digits")
     private String postalCode;
@@ -34,13 +34,7 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public int getAgeLimit() {
-        return ageLimit;
-    }
 
-    public void setAgeLimit(int ageLimit) {
-        this.ageLimit = ageLimit;
-    }
 
     public String getPostalCode() {
         return postalCode;
@@ -48,5 +42,13 @@ public class Customer {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public Integer getAgeLimit() {
+        return ageLimit;
+    }
+
+    public void setAgeLimit(Integer ageLimit) {
+        this.ageLimit = ageLimit;
     }
 }
