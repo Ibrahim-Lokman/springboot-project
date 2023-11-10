@@ -19,7 +19,20 @@
 
     <br><br>
     Last name: <input type="text" th:field="*{lastName}">
+    <br><br>
 
+    Age : <input type="text" th:field="*{ageLimit}">
+    <span th:if="${#fields.hasErrors('ageLimit')}"
+          th:errors="*{ageLimit}"
+          class = "error">
+    </span>
+    <br><br>
+
+    Postal Code : <input type="text" th:field="*{postalCode}">
+    <span th:if="${#fields.hasErrors('postalCode')}"
+          th:errors="*{postalCode}"
+          class = "error">
+    </span>
     <br><br>
     <input type="submit" value="Submit"/>
 </form>
