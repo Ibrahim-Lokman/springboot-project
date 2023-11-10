@@ -20,12 +20,15 @@ public class StudentController {
     @Value("${programmingLanguage}")
     private List<String> programmingLanguage;
 
+    @Value("${operatingSystems}")
+    private List<String> operatingSystems;
     @GetMapping("/showStudentForm")
     public String showForm(Model theModel) {
         Student theStudent = new Student();
         theModel.addAttribute("student", theStudent);
         theModel.addAttribute("countries", countries);
         theModel.addAttribute("programmingLanguage", programmingLanguage);
+        theModel.addAttribute("operatingSystems", operatingSystems);
         return  "student-form";
     }
     @PostMapping("/processStudentForm")

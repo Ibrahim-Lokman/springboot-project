@@ -13,5 +13,13 @@ Registration is confirmed: <span th:text="${student.firstName} + '  ' + ${studen
 Country: <span th:text="${student.country}"/>
 <br><br>
 Favorite Programming Language: <span th:text="${student.favoriteLanguage}"/>
+
+
+<br><br>
+<!--Favorite Operating System: <span th:text="${student.favoriteSystems}"/>-->
+Favorite Operating System:
+<ul>
+    <li th:each="tempSystem : ${student.favoriteSystems}" th:text = "${tempSystem}"/>
+</ul>
 </body>
 </html>
