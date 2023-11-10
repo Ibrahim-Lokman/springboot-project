@@ -7,7 +7,7 @@ public class Customer {
 
 
     @NotNull(message = "is required")
-    @Size(min=1, message = "Atleast 1 character needed")
+    @Size(min=2, message = "Atleast 2 character needed")
     private String firstName = "" ;
     private String lastName;
 
