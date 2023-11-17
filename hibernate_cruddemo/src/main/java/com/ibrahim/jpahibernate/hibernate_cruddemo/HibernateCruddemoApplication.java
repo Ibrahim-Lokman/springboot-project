@@ -17,7 +17,8 @@ public class HibernateCruddemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		return runner -> {
-			createInstructor(appDAO);
+			 // createInstructor(appDAO);
+			findInstructor(appDAO);
 		};
 	}
 
@@ -30,13 +31,6 @@ public class HibernateCruddemoApplication {
 				"Gaming"
 				);
 
-//		Instructor tempInstructor = new Instructor(
-//				"Ibrahim 2", "Lokman 2", "ibrahim2@lokman.com"
-//		);
-//
-//		InstructorDetail tempInstructorDetail = new InstructorDetail("http://www.ibrahim2lokman.com/youtube",
-//				"Coding"
-//		);
 		tempInstructor.setInstructorDetail(tempInstructorDetail);
 
 		System.out.println("Saving Instructor = " + tempInstructor);
@@ -44,4 +38,11 @@ public class HibernateCruddemoApplication {
 		appDAO.save(tempInstructor);
 	}
 
+	private void findInstructor(AppDAO appDAO) {
+		int theId = 7;
+		System.out.println("Finding instructor id: " + theId);
+		Instructor tempInstructor = appDAO.findInstructorById(theId);
+		System.out.println("TEMP INSTRUCTOR: " + tempInstructor);
+		System.out.println("The associated instructor only: " + tempInstructor.getInstructorDetail());
+	}
 }
