@@ -21,7 +21,7 @@ public class HibernateCruddemoApplication {
 			// findInstructor(appDAO);
 			// deleteInstructor(appDAO);
 			// findInstructorDetail(appDAO);
-			// deleteInstructorDetail(appDAO);
+			 deleteInstructorDetail(appDAO);
 		};
 	}
 
@@ -65,7 +65,7 @@ public class HibernateCruddemoApplication {
 	}
 
 	private void deleteInstructorDetail(AppDAO appDAO) {
-		int theId = 9;
+		int theId = 8;
 		System.out.println("Deleting instructor id: " + theId);
 		appDAO.deleteInstructorDetailById(theId);
 		System.out.println("Done!");
