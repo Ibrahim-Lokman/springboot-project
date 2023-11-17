@@ -17,8 +17,9 @@ public class HibernateCruddemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		return runner -> {
-			 // createInstructor(appDAO);
-			findInstructor(appDAO);
+			// createInstructor(appDAO);
+			// findInstructor(appDAO);
+			deleteInstructor(appDAO);
 		};
 	}
 
@@ -45,4 +46,12 @@ public class HibernateCruddemoApplication {
 		System.out.println("TEMP INSTRUCTOR: " + tempInstructor);
 		System.out.println("The associated instructor only: " + tempInstructor.getInstructorDetail());
 	}
+
+	private void deleteInstructor(AppDAO appDAO) {
+		int theId = 7;
+		System.out.println("Deleting instructor id: " + theId);
+		appDAO.deleteInstructorById(theId);
+		System.out.println("Done!");
+	}
+
 }
