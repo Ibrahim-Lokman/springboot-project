@@ -1,5 +1,8 @@
 package com.ibrahim.jpahibernate.hibernate_cruddemo;
 
+import com.ibrahim.jpahibernate.hibernate_cruddemo.dao.AppDAO;
+import com.ibrahim.jpahibernate.hibernate_cruddemo.entity.Instructor;
+import com.ibrahim.jpahibernate.hibernate_cruddemo.entity.InstructorDetail;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,10 +15,33 @@ public class HibernateCruddemoApplication {
 		SpringApplication.run(HibernateCruddemoApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner commandLineRunner() {
+	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		return runner -> {
-			System.out.println("Hello Ibrahim");
+			createInstructor(appDAO);
 		};
+	}
+
+	private void createInstructor(AppDAO appDAO) {
+		Instructor tempInstructor = new Instructor(
+				"Ibrahim", "Lokman", "ibrahim@lokman.com"
+		);
+
+		InstructorDetail tempInstructorDetail = new InstructorDetail("http://www.ibrahimlokman.com/youtube",
+				"Gaming"
+				);
+
+//		Instructor tempInstructor = new Instructor(
+//				"Ibrahim 2", "Lokman 2", "ibrahim2@lokman.com"
+//		);
+//
+//		InstructorDetail tempInstructorDetail = new InstructorDetail("http://www.ibrahim2lokman.com/youtube",
+//				"Coding"
+//		);
+		tempInstructor.setInstructorDetail(tempInstructorDetail);
+
+		System.out.println("Saving Instructor = " + tempInstructor);
+
+		appDAO.save(tempInstructor);
 	}
 
 }
