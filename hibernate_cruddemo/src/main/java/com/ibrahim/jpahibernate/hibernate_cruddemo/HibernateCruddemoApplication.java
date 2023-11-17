@@ -19,7 +19,9 @@ public class HibernateCruddemoApplication {
 		return runner -> {
 			// createInstructor(appDAO);
 			// findInstructor(appDAO);
-			//deleteInstructor(appDAO);
+			// deleteInstructor(appDAO);
+			// findInstructorDetail(appDAO);
+			// deleteInstructorDetail(appDAO);
 		};
 	}
 
@@ -54,4 +56,18 @@ public class HibernateCruddemoApplication {
 		System.out.println("Done!");
 	}
 
+	private void findInstructorDetail(AppDAO appDAO) {
+		int theId = 8;
+		System.out.println("Finding instructor id: " + theId);
+		InstructorDetail tempInstructorDetail = appDAO.findInstructorDetailById(theId);
+		System.out.println("TEMP INSTRUCTOR: " + tempInstructorDetail);
+		System.out.println("The associated instructor only: " + tempInstructorDetail.getInstructor());
+	}
+
+	private void deleteInstructorDetail(AppDAO appDAO) {
+		int theId = 9;
+		System.out.println("Deleting instructor id: " + theId);
+		appDAO.deleteInstructorDetailById(theId);
+		System.out.println("Done!");
+	}
 }
