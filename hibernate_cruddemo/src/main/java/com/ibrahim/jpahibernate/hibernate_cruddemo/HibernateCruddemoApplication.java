@@ -19,17 +19,17 @@ public class HibernateCruddemoApplication {
 		return runner -> {
 			// createInstructor(appDAO);
 			// findInstructor(appDAO);
-			deleteInstructor(appDAO);
+			//deleteInstructor(appDAO);
 		};
 	}
 
 	private void createInstructor(AppDAO appDAO) {
 		Instructor tempInstructor = new Instructor(
-				"Ibrahim", "Lokman", "ibrahim@lokman.com"
+				"Ibrahim 3", "Lokman", "ibrahim3@lokman.com"
 		);
 
-		InstructorDetail tempInstructorDetail = new InstructorDetail("http://www.ibrahimlokman.com/youtube",
-				"Gaming"
+		InstructorDetail tempInstructorDetail = new InstructorDetail("http://www.ibrahim3lokman.com/youtube",
+				"Gaming 3"
 				);
 
 		tempInstructor.setInstructorDetail(tempInstructorDetail);
